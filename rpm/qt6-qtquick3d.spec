@@ -1,5 +1,7 @@
 %global  qt_version 6.8.3
 
+%bcond_with vulkan
+
 Summary: Qt6 - Quick3D Libraries and utilities
 Name:    qt6-qtquick3d
 Version: 6.8.3
@@ -20,6 +22,9 @@ BuildRequires: qt6-qtdeclarative-devel
 BuildRequires: qt6-qtdeclarative-static
 BuildRequires: qt6-qtquicktimeline-devel
 BuildRequires: qt6-qtshadertools-devel
+%if %{with vulkan}
+BuildRequires: vulkan-headers
+%endif
 
 
 %description
