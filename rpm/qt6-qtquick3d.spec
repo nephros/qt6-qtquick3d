@@ -69,7 +69,11 @@ CXXFLAGS="$CXXFLAGS -mno-avx"
 
 %cmake_qt6 \
   -DQT_BUILD_EXAMPLES:BOOL=%{?examples:ON}%{!?examples:OFF} \
-  -DQT_INSTALL_EXAMPLES_SOURCES=%{?examples:ON}%{!?examples:OFF}
+  -DQT_INSTALL_EXAMPLES_SOURCES=%{?examples:ON}%{!?examples:OFF} \
+%if %{with vulkan}
+  -DQT_FEATURE_vulkan=ON \
+%endif
+  %{nil}
 #   -DQT_FEATURE_system_assimp=ON
 
 %cmake_build
