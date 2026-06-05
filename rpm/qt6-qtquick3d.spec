@@ -25,6 +25,9 @@ BuildRequires: qt6-qtshadertools-devel
 %if %{with vulkan}
 BuildRequires: vulkan-headers
 %endif
+%if %{with openxr}
+BuildRequires: pkgconfig(openxr)
+%endif
 
 
 %description
@@ -74,7 +77,8 @@ CXXFLAGS="$CXXFLAGS -mno-avx"
   -DQT_FEATURE_vulkan=ON \
 %endif
 %if %{with openxr}
-   -DQT_FEATURE_openxr=ON \
+   -DQT_FEATURE_quick3dxr_openxr=ON \
+   -DQT_FEATURE_system_openxr=ON \
 %endif
   %{nil}
 #   -DQT_FEATURE_system_assimp=ON
