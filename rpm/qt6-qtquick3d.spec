@@ -42,7 +42,7 @@ Requires: qt6-qtdeclarative-devel%{?_isa}
 %package examples
 Summary: Programming examples for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
-# BuildRequires: qt6-qtquick3d-devel >= %{version}
+# BuildRequires: qt6-qtquick3d-devel >= %%{version}
 %description examples
 %{summary}.
 %endif
@@ -82,7 +82,7 @@ CXXFLAGS="$CXXFLAGS -mno-avx"
 %install
 %cmake_install
 
-# hardlink files to %{_bindir}, add -qt6 postfix to not conflict
+# hardlink files to %%{_bindir}, add -qt6 postfix to not conflict
 mkdir %{buildroot}%{_bindir}
 pushd %{buildroot}%{_qt6_bindir}
 for i in * ; do
