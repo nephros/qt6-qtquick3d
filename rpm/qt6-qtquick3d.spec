@@ -1,6 +1,7 @@
 %global  qt_version 6.8.3
 
 %bcond_with vulkan
+%bcond_with openxr
 
 Summary: Qt6 - Quick3D Libraries and utilities
 Name:    qt6-qtquick3d
