@@ -73,6 +73,9 @@ CXXFLAGS="$CXXFLAGS -mno-avx"
 %if %{with vulkan}
   -DQT_FEATURE_vulkan=ON \
 %endif
+%if %{with openxr}
+   -DQT_FEATURE_openxr=ON \
+%endif
   %{nil}
 #   -DQT_FEATURE_system_assimp=ON
 
